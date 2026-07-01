@@ -1,0 +1,15 @@
+name: cofla_aaai2027
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9.6
+  - pytorch=2.2.1
+  - torchvision=0.17.1
+  - torchaudio=2.2.1
+  - pytorch-cuda=12.1
+  - pip
+  - pip:
+      - -r requirements.txt

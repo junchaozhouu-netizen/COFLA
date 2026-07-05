@@ -1,27 +1,38 @@
-# Anonymization and Clean-Package Check
+# Package Cleaning Check
 
-The released archive was cleaned for anonymous review.
+The released archive was cleaned for review.
 
-## Removed from the original working copy
+Included:
 
-- IDE configuration files.
-- Python bytecode caches and compiled files.
-- Local document-processing utilities unrelated to the paper experiments.
-- Toy plotting code that used simulated data rather than experiment outputs.
-- Private absolute paths and machine-specific defaults.
-- Non-English comments and non-English runtime text.
-- External download links and package-index links.
-- File names and help strings containing personal or project-local identifiers.
+- Source code
+- Requirements and environment files
+- Local-path examples that use relative placeholders
+- Documentation for expected local file layouts
+- Qwen2-VL-7B helper entrypoint and 7B-specific NLVR2/ScienceQA loaders
+- Tri-modal CMU-MOSI and CMU-MOSEI controlled late-fusion entrypoint
 
-## Verification performed
+Excluded:
 
-The final archive was scanned for:
+- Datasets
+- Pretrained checkpoints
+- Trained checkpoints
+- Logs and predictions
+- Private absolute paths
+- User names, email addresses, machine names, and external links
+- Non-English or Chinese text in file names or source files
 
-- URL-like strings.
-- Email-like strings.
-- common private absolute path patterns.
-- Chinese characters.
-- Python bytecode files and cache folders.
-- personal identifier strings detected in the original package.
+Checks performed before packaging:
 
-The source files were also checked with Python bytecode compilation.
+- File names contain no Chinese characters.
+- Text files contain no Chinese characters.
+- Text files contain no external links.
+- Text files contain no email addresses.
+- Text files contain no user-specific identifiers from the local workspace.
+- Text files contain no private absolute machine paths.
+- The archive contains no `__pycache__`, bytecode files, checkpoints, logs, or prediction artifacts.
+- All Python source files pass syntax compilation.
+
+Additional notes:
+
+- All data and model examples use relative placeholder paths.
+- The default `--local_files_only true` behavior is used in the documented examples.

@@ -1,0 +1,76 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Package/build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Logs and experiment outputs
+logs/
+log/
+runs/
+outputs/
+output/
+results/
+checkpoints/
+wandb/
+tensorboard/
+lightning_logs/
+
+# Model weights and large binary artifacts
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+*.onnx
+*.pkl
+*.pickle
+*.npy
+*.npz
+
+# Dataset and local model directories
+data/
+datasets_local/
+external_data/
+external_models/
+pretrained/
+pretrained_models/
+models_local/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Environment and secrets
+.env
+.env.*
+*.key
+*.pem
+*.crt
+*.token
+credentials.json
+token.json
+
+# Jupyter
+.ipynb_checkpoints/
